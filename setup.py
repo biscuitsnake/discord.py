@@ -1,14 +1,15 @@
 from setuptools import setup
-import re, os
+import re
+import os
 
 on_rtd = os.getenv('READTHEDOCS') == 'True'
 
 requirements = []
 with open('requirements.txt') as f:
-  requirements = f.read().splitlines()
+    requirements = f.read().splitlines()
 
 if on_rtd:
-  requirements.append('sphinxcontrib-napoleon')
+    requirements.append('sphinxcontrib-napoleon')
 
 version = ''
 with open('discord/__init__.py') as f:
@@ -47,6 +48,6 @@ setup(name='discord.py',
         'Topic :: Internet',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Utilities',
+        'Topic :: Utilities'
       ]
-)
+      )

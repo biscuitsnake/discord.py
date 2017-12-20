@@ -324,7 +324,6 @@ class Command:
             if not view.eof:
                 raise TooManyArguments('Too many arguments passed to ' + self.qualified_name)
 
-
     def _verify_checks(self, ctx):
         if not self.enabled:
             raise DisabledCommand('{0.name} command is disabled'.format(self))

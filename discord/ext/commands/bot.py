@@ -827,7 +827,6 @@ class Bot(GroupMixin, discord.Client):
             if invoked_prefix is None:
                 return
 
-
         invoker = view.get_word()
         tmp = {
             'bot': self,

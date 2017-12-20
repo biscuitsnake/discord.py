@@ -89,7 +89,7 @@ class Role(Hashable):
         return self.name
 
     def __lt__(self, other):
-        if not isinstance(other, Role) or  not isinstance(self, Role):
+        if not isinstance(other, Role) or not isinstance(self, Role):
             return NotImplemented
 
         if self.server != other.server:

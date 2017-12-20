@@ -37,9 +37,9 @@ extensions = [
 ]
 
 if on_rtd:
-  extensions.append('sphinxcontrib.napoleon')
+    extensions.append('sphinxcontrib.napoleon')
 else:
-  extensions.append('sphinx.ext.napoleon')
+    extensions.append('sphinx.ext.napoleon')
 
 autodoc_member_order = 'bysource'
 
@@ -244,8 +244,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'discord.py.tex', u'discord.py Documentation',
-   u'Rapptz', 'manual'),
+    ('index', 'discord.py.tex', u'discord.py Documentation',
+     u'Rapptz', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -288,9 +288,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'discord.py', u'discord.py Documentation',
-   u'Rapptz', 'discord.py', 'One line description of project.',
-   'Miscellaneous'),
+    ('index', 'discord.py', u'discord.py Documentation',
+     u'Rapptz', 'discord.py', 'One line description of project.',
+     'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.

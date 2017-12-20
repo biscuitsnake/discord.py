@@ -238,7 +238,7 @@ class Encoder:
         if ret < 0:
             log.info('error has happened in set_bandwidth')
             raise OpusError(ret)
-            
+
     def set_signal_type(self, req):
         if req not in signal_ctl:
             raise KeyError('%r is not a valid signal setting. Try one of: %s' % (req, ','.join(signal_ctl)))
@@ -252,14 +252,14 @@ class Encoder:
 
     def set_fec(self, enabled=True):
         ret = _lib.opus_encoder_ctl(self._state, CTL_SET_FEC, 1 if enabled else 0)
-        
+
         if ret < 0:
             log.info('error has happened in set_fec')
             raise OpusError(ret)
-            
+
     def set_expected_packet_loss_percent(self, percentage):
         ret = _lib.opus_encoder_ctl(self._state, CTL_SET_PLP, min(100, max(0, int(percentage * 100))))
-        
+
         if ret < 0:
             log.info('error has happened in set_expected_packet_loss_percent')
             raise OpusError(ret)

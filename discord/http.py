@@ -313,7 +313,7 @@ class HTTPClient:
 
     def delete_message(self, channel_id, message_id, guild_id=None):
         r = Route('DELETE', '/channels/{channel_id}/messages/{message_id}', channel_id=channel_id,
-                                                                            message_id=message_id)
+                  message_id=message_id)
         return self.request(r)
 
     def delete_messages(self, channel_id, message_ids, guild_id=None):
@@ -326,7 +326,7 @@ class HTTPClient:
 
     def edit_message(self, message_id, channel_id, content, *, guild_id=None, embed=None):
         r = Route('PATCH', '/channels/{channel_id}/messages/{message_id}', channel_id=channel_id,
-                                                                           message_id=message_id)
+                  message_id=message_id)
         payload = {}
 
         if content:

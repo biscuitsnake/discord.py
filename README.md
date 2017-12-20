@@ -16,6 +16,7 @@ The discord API is constantly changing and the wrapper API is as well. There wil
 I recommend joining either the [official discord.py server][guild] or the [Discord API server][ch] for help and discussion about the library.
 
 [guild]: https://discord.gg/r3sSKJJ
+
 [ch]: https://discord.gg/discord-api
 
 ## Installing
@@ -46,7 +47,8 @@ $ cd discord.py
 $ python3 -m pip install -U .[voice]
 ```
 
-Please note that on Linux installing voice you must install the following packages via your favourite package manager (e.g. `apt`, `yum`, etc) before running the above command:
+Please note that on Linux installing voice you must install the following packages via your favourite
+package manager (e.g. `apt`, `yum`, etc) before running the above command:
 
 - libffi-dev (or `libffi-devel` on some systems)
 - python<version>-dev (e.g. `python3.5-dev` for Python 3.5)
@@ -93,7 +95,7 @@ You can find examples in the examples directory.
 - `aiohttp` library
 - `websockets` library
 - `PyNaCl` library (optional, for voice only)
-    - On Linux systems this requires the `libffi` library. You can install in
-      debian based systems by doing `sudo apt-get install libffi-dev`.
+- On Linux systems this requires the `libffi` library. You can install in
+  debian based systems by doing `sudo apt-get install libffi-dev`.
 
 Usually `pip` will handle these for you.

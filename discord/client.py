@@ -49,9 +49,15 @@ import asyncio
 import aiohttp
 import websockets
 
-import logging, traceback
-import sys, re, io, enum
-import tempfile, os, hashlib
+import logging
+import traceback
+import sys
+import re
+import io
+import enum
+import tempfile
+import os
+import hashlib
 import itertools
 import datetime
 from collections import namedtuple
@@ -220,7 +226,6 @@ class Client:
                     future.set_result(WaitedReaction(reaction, user))
                     removed.append(i)
 
-
         for idx in reversed(removed):
             del self._listeners[idx]
 
@@ -243,7 +248,6 @@ class Client:
                 if result:
                     future.set_result(message)
                     removed.append(i)
-
 
         for idx in reversed(removed):
             del self._listeners[idx]
@@ -363,7 +367,6 @@ class Client:
                 self._is_logged_in.set()
                 return
 
-
         yield from self.http.email_login(email, password)
         self.email = email
         self._is_logged_in.set()
@@ -474,7 +477,6 @@ class Client:
 
         if self.ws is not None and self.ws.open:
             yield from self.ws.close()
-
 
         yield from self.http.close()
         self._closed.set()
@@ -731,7 +733,6 @@ class Client:
         except asyncio.TimeoutError:
             message = None
         return message
-
 
     @asyncio.coroutine
     def wait_for_reaction(self, emoji=None, *, user=None, timeout=None, message=None, check=None):
@@ -2572,7 +2573,6 @@ class Client:
 
         yield from self.http.edit_custom_emoji(emoji.server.id, emoji.id, name=name)
 
-
     # Invite management
 
     def _fill_invite_data(self, data):
@@ -3051,7 +3051,6 @@ class Client:
         """
 
         overwrite = PermissionOverwrite() if overwrite is None else overwrite
-
 
         if not isinstance(overwrite, PermissionOverwrite):
             raise InvalidArgument('allow and deny parameters must be PermissionOverwrite')

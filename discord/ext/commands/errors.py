@@ -27,9 +27,9 @@ from discord.errors import DiscordException
 
 
 __all__ = [ 'CommandError', 'MissingRequiredArgument', 'BadArgument',
-           'NoPrivateMessage', 'CheckFailure', 'CommandNotFound',
-           'DisabledCommand', 'CommandInvokeError', 'TooManyArguments',
-           'UserInputError', 'CommandOnCooldown' ]
+            'NoPrivateMessage', 'CheckFailure', 'CommandNotFound',
+            'DisabledCommand', 'CommandInvokeError', 'TooManyArguments',
+            'UserInputError', 'CommandOnCooldown' ]
 
 class CommandError(DiscordException):
     """The base exception type for all command related errors.

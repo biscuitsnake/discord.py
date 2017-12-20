@@ -30,7 +30,8 @@ import datetime
 from base64 import b64encode
 import asyncio
 import json
-import warnings, functools
+import warnings
+import functools
 
 DISCORD_EPOCH = 1420070400000
 
@@ -138,7 +139,7 @@ def time_snowflake(datetime_obj, high=False):
     unix_seconds = (datetime_obj - type(datetime_obj)(1970, 1, 1)).total_seconds()
     discord_millis = int(unix_seconds * 1000 - DISCORD_EPOCH)
 
-    return (discord_millis << 22) + (2**22-1 if high else 0)
+    return (discord_millis << 22) + (2**22 - 1 if high else 0)
 
 def find(predicate, seq):
     """A helper to return the first element found in the sequence
@@ -250,4 +251,3 @@ def _bytes_to_base64_data(data):
 
 def to_json(obj):
     return json.dumps(obj, separators=(',', ':'), ensure_ascii=True)
-

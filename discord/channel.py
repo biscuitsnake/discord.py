@@ -442,5 +442,3 @@ class PrivateChannel(Hashable):
             base.kick_members = True
 
         return base
-
-

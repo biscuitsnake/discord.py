@@ -250,7 +250,6 @@ class Server(Hashable):
                 channel = Channel(server=self, **c)
                 self._add_channel(channel)
 
-
     @utils.cached_slot_property('_default_role')
     def default_role(self):
         """Gets the @everyone role that all members have by default."""

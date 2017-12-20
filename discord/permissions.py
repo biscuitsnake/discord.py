@@ -68,6 +68,7 @@ class Permissions:
     """
 
     __slots__ = [ 'value' ]
+
     def __init__(self, permissions=0, **kwargs):
         self.value = permissions
 
@@ -187,9 +188,9 @@ class Permissions:
         return bool((self.value >> index) & 1)
 
     def _set(self, index, value):
-        if value == True:
+        if value:
             self.value |= (1 << index)
-        elif value == False:
+        elif not value:
             self.value &= ~(1 << index)
         else:
             raise TypeError('Value to set for Permissions must be a bool.')
@@ -483,8 +484,10 @@ def augment_from_permissions(cls):
     # make descriptors for all the valid names
     for name in cls.VALID_NAMES:
         # god bless Python
+
         def getter(self, x=name):
             return self._values.get(x)
+
         def setter(self, value, x=name):
             self._set(x, value)
 

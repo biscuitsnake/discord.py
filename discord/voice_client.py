@@ -42,7 +42,8 @@ DEALINGS IN THE SOFTWARE.
 import asyncio
 import websockets
 import socket
-import json, time
+import json
+import time
 import logging
 import struct
 import threading
@@ -434,7 +435,6 @@ class VoiceClient:
             raise ClientException('ffmpeg/avconv was not found in your PATH environment variable') from e
         except subprocess.SubprocessError as e:
             raise ClientException('Popen failed: {0.__name__} {1}'.format(type(e), str(e))) from e
-
 
     @asyncio.coroutine
     def create_ytdl_player(self, url, *, ytdl_options=None, **kwargs):

@@ -34,7 +34,9 @@ from .enums import Status, try_enum
 from .game import Game
 from .errors import GatewayNotFound, ConnectionClosed, InvalidArgument
 import logging
-import zlib, time, json
+import zlib
+import time
+import json
 from collections import namedtuple
 import threading
 import struct
@@ -352,7 +354,7 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
             return
 
         if op == self.INVALIDATE_SESSION:
-            if data == True:
+            if data:
                 yield from asyncio.sleep(5.0, loop=self.loop)
                 yield from self.close()
                 raise ResumeWebSocket()
@@ -679,5 +681,3 @@ class DiscordVoiceWebSocket(websockets.client.WebSocketClientProtocol):
             self._keep_alive.stop()
 
         yield from super().close_connection(force=force)
-
-

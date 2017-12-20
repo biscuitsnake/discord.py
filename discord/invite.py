@@ -75,7 +75,6 @@ class Invite(Hashable):
         The channel the invite is for.
     """
 
-
     __slots__ = [ 'max_age', 'code', 'server', 'revoked', 'created_at', 'uses',
                   'temporary', 'max_uses', 'xkcd', 'inviter', 'channel' ]
 
@@ -106,4 +105,3 @@ class Invite(Hashable):
     def url(self):
         """A property that retrieves the invite URL."""
         return 'http://discord.gg/{}'.format(self.id)
-

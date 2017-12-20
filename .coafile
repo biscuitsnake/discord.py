@@ -1,16 +1,19 @@
 [default]
 bears = InvalidLinkBear, coalaBear, FilenameBear
 files = **.py, **.md, **.rst, **.yml
-ignore =
+link_ignore_list = https://discordapp.com/**, https://www.youtube.com/**
+max_line_length = 160
+file_naming_convention = snake
+
 [python]
 bears = PycodestyleBear
 files = **.py
+pycodestyle_ignore = E722, E265, E302, E122, E201, E202, E221, E203, E731, E261, E402, E305, E121, E126
+
 [yaml]
 bears = LineLengthBear, YAMLLintBear
 files = **.yml
-[restructuredtext]
-bears = LineLengthBear, RSTcheckBear, reSTLintBear
-files = **.rst
+
 [markdown]
 bears = LineLengthBear, MarkdownBear
 files = **.md
