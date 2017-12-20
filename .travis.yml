@@ -18,4 +18,4 @@ script:
   - git diff --cached --find-renames > with-whitespace.diff
   - cat with-whitespace.diff | curl -F 'clbin=<-' https://clbin.com
   # Upload logs to https://clbin.com
-- cat coala-ci.log | curl -F 'clbin=<-' https://clbin.com
+  - cat coala-ci.log | curl -F 'clbin=<-' https://clbin.com
